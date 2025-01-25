@@ -1,5 +1,7 @@
 # Speech Emotion Recognition Using the TESS Dataset
 
+![Speech_Emotion_Recognition_Poster](https://github.com/user-attachments/assets/a5ce24f0-53bd-45a3-a022-f1c04b792a0a)
+
 This project is a Speech Emotion Recognition (SER) system that classifies emotions in speech audio files using the Toronto Emotional Speech Set (TESS) dataset. It employs audio preprocessing techniques, MFCC feature extraction, and machine learning algorithms to predict emotions such as Angry, Happy, Sad, and more.
 
 ---
@@ -82,6 +84,21 @@ The following machine learning classifiers were evaluated:
 - SVM achieved the highest accuracy (93%) on the test set, making it the best-performing model.
 - Emotions like Fear and Anger showed overlaps due to similar acoustic features.
 - MFCCs proved to be highly effective features for emotion classification.
+
+---
+
+## 🎯 Output Metrics
+1. Logistic Regression
+   ![image](https://github.com/user-attachments/assets/0e850bfb-e841-494b-a8e7-af7dd5fb852d)
+   
+3. Support Vector Machine
+   ![image](https://github.com/user-attachments/assets/bb5d01c3-d3c2-42f9-8105-22c78c1bed81)
+
+4. K-Nearest Neighbor
+   ![image](https://github.com/user-attachments/assets/a26145ce-4895-4575-a62d-324399b3292e)
+
+5. Random Forest Classifier
+   ![image](https://github.com/user-attachments/assets/aa7cb924-e589-4ebd-8a60-633d72df4ea1)
 
 ---
 
