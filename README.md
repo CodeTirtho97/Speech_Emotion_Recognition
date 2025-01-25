@@ -21,6 +21,15 @@ Speech Emotion Recognition (SER) is a crucial task in understanding human emotio
 
 ---
 
+## 🌳 Project Structure
+      Speech_Emotion_Recognition/
+      ├── Toronto Emotional Speech Set/            # Contains audio files for training and validation.
+      ├── Unused_Data/                             # Contains audio files separated for testing only.
+      ├── Speech_Emotion_Recognition.ipynb         # Main notebook
+      └── README.md                                # Project documentation
+
+---
+
 ## 🛠️ Project Workflow
 1. **Preprocessing**:
    - Extract **MFCC (Mel-Frequency Cepstral Coefficients)** features.
