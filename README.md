@@ -1,6 +1,7 @@
 # Speech Emotion Recognition Using the TESS Dataset
 
-![Speech_Emotion_Recognition_Poster](https://github.com/user-attachments/assets/a5ce24f0-53bd-45a3-a022-f1c04b792a0a)
+<img width="1024" height="1024" alt="Speech_Emotion_Recognition_Poster" src="https://github.com/user-attachments/assets/0a6831bf-796a-4baf-9fea-9d01ffdec049" />
+
 
 This project is a Speech Emotion Recognition (SER) system that classifies emotions in speech audio files using the Toronto Emotional Speech Set (TESS) dataset. It employs audio preprocessing techniques, MFCC feature extraction, and machine learning algorithms to predict emotions such as Angry, Happy, Sad, and more.
 
