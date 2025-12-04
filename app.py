@@ -12,7 +12,10 @@ import traceback
 
 # Initialize Flask app
 app = Flask(__name__)
-CORS(app, origins=['*'])  # Allow all origins for now
+CORS(app, origins=[
+    'https://speech-emotion-recognition-woad.vercel.app',  # Your Vercel URL
+    'http://localhost:8000'  # Keep for local testing
+], supports_credentials=True)
 
 # Configuration
 UPLOAD_FOLDER = 'uploads'
