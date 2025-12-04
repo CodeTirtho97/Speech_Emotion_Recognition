@@ -16,10 +16,19 @@ os.environ['MPLCONFIGDIR'] = '/tmp'
 
 # Initialize Flask app
 app = Flask(__name__)
-CORS(app, origins=[
-    'https://speech-emotion-recognition-woad.vercel.app',  # Your Vercel URL
-    'http://localhost:8000'  # Keep for local testing
-], supports_credentials=True)
+
+# Configure CORS properly
+CORS(app, resources={
+    r"/*": {
+        "origins": [
+            "https://speech-emotion-recognition-woad.vercel.app",
+            "http://localhost:8000"
+        ],
+        "methods": ["GET", "POST", "OPTIONS"],
+        "allow_headers": ["Content-Type"],
+        "supports_credentials": True
+    }
+})
 
 # Configuration
 UPLOAD_FOLDER = 'uploads'
