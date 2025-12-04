@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Emotion Recognition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                        <path d="M15 18C15 18 17 15 20 15C23 15 25 18 25 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M14 25C14 25 16.5 28 20 28C23.5 28 26 25 26 25" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="15" cy="18" r="1.5" fill="currentColor"/>
+                        <circle cx="25" cy="18" r="1.5" fill="currentColor"/>
+                    </svg>
+                    <h1>Speech Emotion Recognition</h1>
+                </div>
+                <div class="status-badge" id="statusBadge">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Checking...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="upload-card">
+                    <div class="upload-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 16V40M32 16L24 24M32 16L40 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M48 40V48H16V40" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h2>Upload Audio File</h2>
+                    <p>Drop your audio file here or click to browse</p>
+                    <input type="file" id="fileInput" accept=".wav,.mp3,.ogg,.flac" style="display: none;">
+                    <button class="btn-primary" id="uploadBtn">Choose File</button>
+                    <div class="file-info" id="fileInfo" style="display: none;">
+                        <span class="file-name" id="fileName"></span>
+                        <button class="btn-remove" id="removeBtn">×</button>
+                    </div>
+                    <p class="supported-formats">Supported formats: WAV, MP3, OGG, FLAC (Max 16MB)</p>
+                </div>
+
+                <button class="btn-analyze" id="analyzeBtn" disabled>
+                    <span class="btn-text">Analyze Emotion</span>
+                    <span class="btn-loader" style="display: none;">
+                        <span class="spinner"></span>
+                        Processing...
+                    </span>
+                </button>
+            </section>
+
+            <!-- Audio Player -->
+            <section class="audio-player-section" id="audioPlayerSection" style="display: none;">
+                <div class="audio-player-card">
+                    <h3>Audio Preview</h3>
+                    <audio controls id="audioPlayer" class="audio-player"></audio>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-card">
+                    <div class="result-header">
+                        <h2>Analysis Results</h2>
+                        <span class="model-badge" id="modelBadge"></span>
+                    </div>
+
+                    <div class="emotion-result">
+                        <div class="emotion-icon" id="emotionIcon">😊</div>
+                        <h3 class="emotion-label">Detected Emotion</h3>
+                        <div class="emotion-value" id="emotionValue">Happy</div>
+                    </div>
+
+                    <div class="confidence-section">
+                        <h3>Confidence Scores</h3>
+                        <div class="confidence-bars" id="confidenceBars"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Error Section -->
+            <section class="error-section" id="errorSection" style="display: none;">
+                <div class="error-card">
+                    <div class="error-icon">⚠️</div>
+                    <h3>Error</h3>
+                    <p id="errorMessage"></p>
+                    <button class="btn-secondary" id="retryBtn">Try Again</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Powered by Machine Learning | SVM Model with 92.75% Accuracy</p>
+            <div class="footer-links">
+                <a href="#" id="aboutLink">About</a>
+                <a href="#" id="apiDocsLink">API Docs</a>
+                <a href="https://github.com" target="_blank">GitHub</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Info Modal -->
+    <div class="modal" id="infoModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <h2>About Speech Emotion Recognition</h2>
+            <p>This application uses advanced machine learning to detect emotions from speech audio files.</p>
+            <h3>How it works:</h3>
+            <ol>
+                <li>Upload an audio file (WAV, MP3, OGG, or FLAC)</li>
+                <li>Our SVM model analyzes the audio features (MFCCs)</li>
+                <li>Get instant emotion detection with confidence scores</li>
+            </ol>
+            <h3>Supported Emotions:</h3>
+            <ul id="emotionsList"></ul>
+            <h3>Model Performance:</h3>
+            <p>Our SVM model achieves <strong>92.75% accuracy</strong> on the TESS dataset.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

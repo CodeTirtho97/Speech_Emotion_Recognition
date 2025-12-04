@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python train_model.py:*)",
+      "Bash(python3:*)",
+      "Bash(where:*)",
+      "Bash(dir \"C:\\Users\\User\\anaconda3\")",
+      "Bash(dir \"C:\\ProgramData\\Anaconda3\")",
+      "Bash(\"C:\\Users\\User\\anaconda3\\python.exe\" train_model.py)",
+      "Bash(dir:*)",
+      "Bash(\"C:\\Users\\User\\anaconda3\\python.exe\" test_pipeline.py)",
+      "Bash(\"C:\\Users\\User\\anaconda3\\python.exe\" -m http.server 8000 --directory frontend)",
+      "Bash(\"C:\\Users\\User\\anaconda3\\python.exe\" app.py)",
+      "Bash(\"C:\\Users\\User\\anaconda3\\python.exe\" -m pip install flask flask-cors imbalanced-learn)",
+      "Bash(\"C:\\Users\\User\\anaconda3\\python.exe\" -m pip install -r \"d:\\ML_PROJECTS\\Speech_Emotion_Recognition\\requirements.txt\")",
+      "Bash(\"C:\\Users\\User\\anaconda3\\python.exe\" -m pip install librosa scikit-learn pandas matplotlib seaborn imbalanced-learn joblib flask flask-cors)",
+      "Bash(python -m pip install:*)",
+      "Bash(run_backend.bat)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

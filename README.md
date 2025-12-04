@@ -1,147 +1,263 @@
-# Speech Emotion Recognition Using the TESS Dataset
+# Speech Emotion Recognition
 
 <img width="1024" height="1024" alt="Speech_Emotion_Recognition_Poster" src="https://github.com/user-attachments/assets/0a6831bf-796a-4baf-9fea-9d01ffdec049" />
 
+A full-stack Speech Emotion Recognition (SER) system with ML backend and modern web interface that classifies emotions from speech audio files using the Toronto Emotional Speech Set (TESS) dataset.
 
-This project is a Speech Emotion Recognition (SER) system that classifies emotions in speech audio files using the Toronto Emotional Speech Set (TESS) dataset. It employs audio preprocessing techniques, MFCC feature extraction, and machine learning algorithms to predict emotions such as Angry, Happy, Sad, and more.
+## 🚀 Live Demo
 
----
+- **Frontend:** [PLACEHOLDER - Add your deployed frontend URL]
+- **Backend API:** [PLACEHOLDER - Add your deployed backend URL]
 
-## 🚀 Project Overview
-Speech Emotion Recognition (SER) is a crucial task in understanding human emotions from audio signals, with applications in customer service, healthcare, and AI-driven assistants. This project builds a pipeline that:
-1. Processes audio data.
-2. Extracts meaningful features (MFCCs).
-3. Trains machine learning models to classify emotions.
+## ✨ Features
 
----
+- 🎯 **92.75% Accuracy** - Production-quality SVM model
+- 🎨 **Modern Web UI** - Responsive design with drag & drop upload
+- 🎵 **Audio Preview** - Listen to audio before analysis
+- 📊 **Confidence Scores** - View prediction confidence for all emotions
+- 🚀 **REST API** - Complete Flask API for integration
+- 📱 **Mobile Friendly** - Works on all devices
 
-## 📂 Dataset
-- **Dataset Name**: Toronto Emotional Speech Set (TESS)
-- **Description**: ~2800 clean WAV files labeled with 7 emotions: Angry, Disgust, Fear, Happy, Neutral, Pleasant Surprise, and Sad.
-- **Actors**: Two female speakers aged 26 and 64.
-- **Format**: WAV files recorded at a sampling rate of 24,000 Hz.
-- **Link**: [TESS Dataset](https://www.kaggle.com/datasets/ejlok1/toronto-emotional-speech-set-tess)
+## 📊 Model Performance
 
----
+| Model                 | Accuracy | Precision | Recall | F1-Score |
+|-----------------------|----------|-----------|--------|----------|
+| **SVM**               | **92.75%** | **0.93** | **0.93** | **0.93** |
+| Logistic Regression   | 89.86%   | 0.90     | 0.90   | 0.89     |
+| KNN                   | 86.23%   | 0.87     | 0.86   | 0.86     |
+| Random Forest         | 85.14%   | 0.85     | 0.85   | 0.85     |
 
-## 🌳 Project Structure
-      Speech_Emotion_Recognition/
-      ├── Toronto Emotional Speech Set/            # Contains audio files for training and validation.
-      ├── Unused_Data/                             # Contains audio files separated for testing only.
-      ├── Speech_Emotion_Recognition.ipynb         # Main notebook
-      └── README.md                                # Project documentation
+## 🎭 Supported Emotions
 
----
+- 😠 Angry
+- 🤢 Disgust
+- 😨 Fear
+- 😊 Happy
+- 😐 Neutral
+- 😲 Pleasant Surprise
+- 😢 Sad
 
-## 🛠️ Project Workflow
-1. **Preprocessing**:
-   - Extract **MFCC (Mel-Frequency Cepstral Coefficients)** features.
-   - Normalize and balance the dataset.
-   - Split into training and testing sets.
-2. **Model Training**:
-   - Train multiple machine learning classifiers (e.g., Logistic Regression, SVM, KNN, Random Forest).
-   - Perform hyperparameter tuning for optimal performance.
-3. **Evaluation**:
-   - Compare models using accuracy, precision, recall, and F1-score.
-   - Identify the best-performing model.
-4. **Generalization**:
-   - Test the selected model on unseen data.
+## 🛠️ Tech Stack
 
----
+**Backend:**
+- Python 3.12
+- Flask + Flask-CORS
+- Scikit-learn (SVM, PCA)
+- Librosa (Audio Processing)
+- SMOTE (Data Balancing)
+- NumPy, Pandas
 
-## ⚙️ Features Extracted
-- **MFCC**: Captures frequency and time domain characteristics of speech.
-- **Chroma Features**: Represent pitch class information.
-- **Zero-Crossing Rate**: Measures frequency of signal sign changes.
+**Frontend:**
+- HTML5 / CSS3
+- Vanilla JavaScript
+- Fetch API
+- Responsive Design
 
----
+## 📂 Project Structure
 
-## 📊 Model Comparison
-The following machine learning classifiers were evaluated:
-- Logistic Regression
-- Support Vector Machines (SVM)
-- K-Nearest Neighbors (KNN)
-- Random Forest
+```
+Speech_Emotion_Recognition/
+├── backend/
+│   ├── pipeline.py          # ML pipeline
+│   ├── train_model.py       # Training script
+│   ├── test_pipeline.py     # Testing script
+│   ├── app.py               # Flask API
+│   └── models/              # Saved models
+├── frontend/
+│   ├── index.html           # Main UI
+│   ├── style.css            # Styling
+│   └── script.js            # Frontend logic
+├── Toronto Emotional Speech Set/  # Dataset
+├── requirements.txt         # Dependencies
+└── README.md               # This file
+```
 
-| Model                 | Accuracy | Precision (Macro Avg) | Recall (Macro Avg) | F1-Score (Macro Avg) |
-|-----------------------|----------|------------------------|---------------------|-----------------------|
-| Logistic Regression   | 0.85     | 0.86                   | 0.84                | 0.85                  |
-| **SVM**               | **0.93** | **0.92**               | **0.93**            | **0.92**              |
-| KNN                   | 0.88     | 0.87                   | 0.89                | 0.88                  |
-| Random Forest         | 0.90     | 0.89                   | 0.91                | 0.90                  |
+## 🚀 Quick Start
 
----
+### 1. Clone Repository
+```bash
+git clone [PLACEHOLDER - Add your repository URL]
+cd speech-emotion-recognition
+```
 
-## 🔧 Tools and Libraries
-- **Python**
-- **Librosa**: Audio feature extraction.
-- **Scikit-learn**: Machine learning and evaluation.
-- **Matplotlib**: Visualization.
-- **Pandas & NumPy**: Data manipulation and analysis.
+### 2. Install Dependencies
 
----
+**Important:** This project requires **Python 3.10-3.13** (Python 3.14+ not yet supported by librosa).
 
-## 🔍 Key Findings
-- SVM achieved the highest accuracy (93%) on the test set, making it the best-performing model.
-- Emotions like Fear and Anger showed overlaps due to similar acoustic features.
-- MFCCs proved to be highly effective features for emotion classification.
+**Option A - Using pip:**
+```bash
+pip install -r requirements.txt
+```
 
----
+**Option B - Using conda (recommended):**
+```bash
+conda install -c conda-forge librosa scikit-learn flask flask-cors imbalanced-learn
+```
 
-## 🎯 Output Metrics
-1. Logistic Regression
-   ![image](https://github.com/user-attachments/assets/0e850bfb-e841-494b-a8e7-af7dd5fb852d)
-   
-3. Support Vector Machine
-   ![image](https://github.com/user-attachments/assets/bb5d01c3-d3c2-42f9-8105-22c78c1bed81)
+**If you encounter issues:** Use Anaconda Python 3.10-3.13 which has all packages pre-configured.
 
-4. K-Nearest Neighbor
-   ![image](https://github.com/user-attachments/assets/a26145ce-4895-4575-a62d-324399b3292e)
+### 3. Train Model (First Time Only)
+```bash
+python train_model.py
+```
 
-5. Random Forest Classifier
-   ![image](https://github.com/user-attachments/assets/aa7cb924-e589-4ebd-8a60-633d72df4ea1)
+### 4. Start Backend
+```bash
+python app.py
+```
+Backend runs at: `http://localhost:5000`
 
----
+### 5. Start Frontend
+```bash
+cd frontend
+python -m http.server 8000
+```
+Frontend runs at: `http://localhost:8000`
 
-## 🏷️ Applications
-- **Call Centers**: Analyze customer sentiment during calls.
-- **Healthcare**: Monitor mental health through emotional analysis.
-- **AI Assistants**: Enhance responses based on emotional states.
-- **Education**: Measure student engagement via emotional feedback.
+### 6. Use the Application
+1. Open browser to `http://localhost:8000`
+2. Upload an audio file (WAV, MP3, OGG, FLAC)
+3. Click "Analyze Emotion"
+4. View results with confidence scores
 
----
+## 📡 API Endpoints
 
-## 📌 Future Improvements
-- Incorporate deep learning models (e.g., CNN, RNN) for improved accuracy.
-- Use a more diverse dataset with varied speakers and accents.
-- Test the system in real-world noisy environments.
+### Health Check
+```bash
+GET /health
+```
+**Response:**
+```json
+{
+  "status": "healthy",
+  "model_loaded": true,
+  "model_name": "SVM"
+}
+```
 
----
+### Get Emotions List
+```bash
+GET /emotions
+```
 
-## 📥 Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/username/speech-emotion-recognition.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd speech-emotion-recognition
-   ```
-3. Install dependencies:
-   ```bash
-    pip install -r requirements.txt
-   ```
+### Predict Emotion
+```bash
+POST /predict
+Content-Type: multipart/form-data
 
-## ▶️ Usage
-1. Run the notebook:
-   ```bash
-    jupyter notebook Speech_Emotion_Recognition.ipynb
-   
-2. Follow the steps in the notebook to preprocess, train, and evaluate models.
+file: <audio_file>
+```
+**Response:**
+```json
+{
+  "success": true,
+  "predicted_emotion": "Happy",
+  "confidence_scores": {
+    "Happy": 0.85,
+    "Neutral": 0.10,
+    ...
+  },
+  "model_used": "SVM"
+}
+```
 
+## 📊 Dataset
+
+- **Name:** Toronto Emotional Speech Set (TESS)
+- **Size:** ~2,800 audio files
+- **Format:** WAV (24,000 Hz)
+- **Speakers:** 2 female speakers (ages 26 and 64)
+- **Link:** [TESS Dataset on Kaggle](https://www.kaggle.com/datasets/ejlok1/toronto-emotional-speech-set-tess)
+
+## 🔧 ML Pipeline
+
+1. **Audio Preprocessing** - Load, resample (22,050 Hz), normalize
+2. **Feature Extraction** - MFCC (13 coefficients)
+3. **Dimensionality Reduction** - PCA (10 components, 99% variance)
+4. **Scaling** - StandardScaler normalization
+5. **Data Balancing** - SMOTE for class balance
+6. **Model Training** - SVM with RBF kernel
+7. **Prediction** - Emotion + confidence scores
+
+## 🎯 Use Cases
+
+- 📞 **Call Centers** - Customer sentiment analysis
+- 🏥 **Healthcare** - Mental health monitoring
+- 🤖 **AI Assistants** - Emotion-aware responses
+- 📚 **Education** - Student engagement tracking
+- 🎮 **Gaming** - Emotion-based interactions
+
+## 🔒 Security Notes
+
+- Models are loaded once at startup
+- File size limited to 16MB
+- File type validation (WAV, MP3, OGG, FLAC only)
+- Temporary files cleaned after processing
+- CORS configured for frontend integration
+
+## 🚢 Deployment
+
+### Backend (Heroku/AWS/GCP)
+```bash
+# Add Procfile
+web: gunicorn app:app
+
+# Deploy
+git push heroku master
+```
+
+### Frontend (Netlify/Vercel)
+```bash
+cd frontend
+vercel deploy
+```
+
+Update `frontend/script.js` with your backend URL:
+```javascript
+const API_BASE_URL = 'https://your-backend-url.com';
+```
+
+## 📝 Testing
+
+**Test Pipeline:**
+```bash
+python test_pipeline.py
+```
+
+**API Test:**
+```bash
+curl -X POST http://localhost:5000/predict \
+  -F "file=@path/to/audio.wav"
+```
 
 ## 🤝 Contributing
-  Contributions are welcome! Please feel free to submit issues or pull requests.
 
-## 📜 License
-  This project is licensed under the MIT License. See the LICENSE file for details.
+Contributions are welcome! Please:
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 👥 Authors
+
+[PLACEHOLDER - Add your name and contact]
+
+## 🙏 Acknowledgments
+
+- TESS Dataset creators
+- Toronto Metropolitan University
+- Open source community
+
+## 📧 Contact
+
+- **Email:** [PLACEHOLDER - Add your email]
+- **GitHub:** [PLACEHOLDER - Add your GitHub profile]
+- **LinkedIn:** [PLACEHOLDER - Add your LinkedIn]
+
+---
+
+**Built with ❤️ using Python, Flask, and Machine Learning**
