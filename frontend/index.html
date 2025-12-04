@@ -21,9 +21,16 @@
                     </svg>
                     <h1>Speech Emotion Recognition</h1>
                 </div>
-                <div class="status-badge" id="statusBadge">
-                    <span class="status-dot"></span>
-                    <span class="status-text">Checking...</span>
+                <div class="header-right">
+                    <div class="status-badge" id="statusBadge">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Checking...</span>
+                    </div>
+                    <a href="https://github.com/CodeTirtho97/Speech_Emotion_Recognition" target="_blank" rel="noopener noreferrer" class="github-link" title="View on GitHub">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </header>
@@ -101,11 +108,31 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <p>Powered by Machine Learning | SVM Model with 92.75% Accuracy</p>
-            <div class="footer-links">
-                <a href="#" id="aboutLink">About</a>
-                <a href="#" id="apiDocsLink">API Docs</a>
-                <a href="https://github.com" target="_blank">GitHub</a>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="footer-tech">
+                        <span class="tech-badge">ML Powered</span>
+                        <span class="separator">•</span>
+                        <span class="tech-badge">SVM Model</span>
+                        <span class="separator">•</span>
+                        <span class="tech-badge">92.75% Accuracy</span>
+                    </p>
+                    <p class="footer-creator">
+                        Created by <a href="https://github.com/CodeTirtho97" target="_blank" rel="noopener noreferrer" class="creator-link">CodeTirtho97</a>
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <a href="#" id="aboutLink">About</a>
+                    <span class="separator">•</span>
+                    <a href="#" id="apiDocsLink">API Docs</a>
+                    <span class="separator">•</span>
+                    <a href="https://github.com/CodeTirtho97/Speech_Emotion_Recognition" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                        GitHub
+                    </a>
+                </div>
             </div>
         </footer>
     </div>
@@ -114,18 +141,80 @@
     <div class="modal" id="infoModal">
         <div class="modal-content">
             <span class="modal-close" id="modalClose">&times;</span>
-            <h2>About Speech Emotion Recognition</h2>
-            <p>This application uses advanced machine learning to detect emotions from speech audio files.</p>
-            <h3>How it works:</h3>
-            <ol>
-                <li>Upload an audio file (WAV, MP3, OGG, or FLAC)</li>
-                <li>Our SVM model analyzes the audio features (MFCCs)</li>
-                <li>Get instant emotion detection with confidence scores</li>
-            </ol>
-            <h3>Supported Emotions:</h3>
-            <ul id="emotionsList"></ul>
-            <h3>Model Performance:</h3>
-            <p>Our SVM model achieves <strong>92.75% accuracy</strong> on the TESS dataset.</p>
+
+            <div class="modal-header">
+                <div class="modal-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="2"/>
+                        <path d="M18 21C18 21 20 18 24 18C28 18 30 21 30 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M17 30C17 30 20 33 24 33C28 33 31 30 31 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="18" cy="21" r="2" fill="currentColor"/>
+                        <circle cx="30" cy="21" r="2" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h2>About Speech Emotion Recognition</h2>
+                <p class="modal-subtitle">AI-powered emotion detection from audio</p>
+            </div>
+
+            <div class="modal-section">
+                <div class="section-icon">🎯</div>
+                <h3>What is this?</h3>
+                <p>This application uses advanced machine learning algorithms to detect and classify emotions from speech audio files with high accuracy.</p>
+            </div>
+
+            <div class="modal-section">
+                <div class="section-icon">⚙️</div>
+                <h3>How it works</h3>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <span class="step-number">1</span>
+                        <p>Upload an audio file in WAV, MP3, OGG, or FLAC format</p>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">2</span>
+                        <p>Our SVM model extracts and analyzes MFCC features</p>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">3</span>
+                        <p>Get instant emotion predictions with confidence scores</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <div class="section-icon">😊</div>
+                <h3>Supported Emotions</h3>
+                <ul id="emotionsList" class="emotions-grid"></ul>
+            </div>
+
+            <div class="modal-section highlight-section">
+                <div class="performance-badge">
+                    <div class="perf-icon">🏆</div>
+                    <div class="perf-content">
+                        <h3>Model Performance</h3>
+                        <div class="accuracy-display">
+                            <span class="accuracy-number">92.75%</span>
+                            <span class="accuracy-label">Accuracy</span>
+                        </div>
+                        <p class="dataset-info">Trained on TESS dataset</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-section tech-section">
+                <div class="section-icon">🔬</div>
+                <h3>Technology Stack</h3>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">scikit-learn</span>
+                    <span class="tech-tag">librosa</span>
+                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">SVM</span>
+                    <span class="tech-tag">MFCC</span>
+                    <span class="tech-tag">PCA</span>
+                    <span class="tech-tag">SMOTE</span>
+                </div>
+            </div>
         </div>
     </div>
 
