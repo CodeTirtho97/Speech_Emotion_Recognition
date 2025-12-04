@@ -13,8 +13,8 @@ ENV/
 *.ipynb_checkpoints
 
 # Models
-models/
-*.pkl
+# models/
+# *.pkl
 
 # Uploads
 uploads/
