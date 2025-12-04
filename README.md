@@ -242,21 +242,11 @@ Contributions are welcome! Please:
 
 This project is licensed under the MIT License.
 
-## 👥 Authors
-
-[PLACEHOLDER - Add your name and contact]
-
 ## 🙏 Acknowledgments
 
 - TESS Dataset creators
 - Toronto Metropolitan University
 - Open source community
-
-## 📧 Contact
-
-- **Email:** [PLACEHOLDER - Add your email]
-- **GitHub:** [PLACEHOLDER - Add your GitHub profile]
-- **LinkedIn:** [PLACEHOLDER - Add your LinkedIn]
 
 ---
 
