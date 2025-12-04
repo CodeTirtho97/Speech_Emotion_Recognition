@@ -10,6 +10,10 @@ import os
 from werkzeug.utils import secure_filename
 import traceback
 
+# Fix numba compilation issues on serverless platforms
+os.environ['NUMBA_CACHE_DIR'] = '/tmp'
+os.environ['MPLCONFIGDIR'] = '/tmp'
+
 # Initialize Flask app
 app = Flask(__name__)
 CORS(app, origins=[
