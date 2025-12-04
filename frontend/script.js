@@ -1,5 +1,5 @@
 // API Configuration
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = "https://speech-emotion-api-ghit.onrender.com";
 
 // Emotion Icons Mapping
 const EMOTION_ICONS = {
