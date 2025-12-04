@@ -13,6 +13,9 @@ import traceback
 # Fix numba compilation issues on serverless platforms
 os.environ['NUMBA_CACHE_DIR'] = '/tmp'
 os.environ['MPLCONFIGDIR'] = '/tmp'
+os.environ['NUMBA_NUM_THREADS'] = '2'  # Limit numba threads
+os.environ['OMP_NUM_THREADS'] = '1'  # Limit OpenMP threads to reduce memory
+os.environ['OPENBLAS_NUM_THREADS'] = '1'  # Limit BLAS threads
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -47,6 +50,22 @@ pipeline = SpeechEmotionPipeline()
 try:
     pipeline.load_pipeline(save_dir=MODELS_DIR)
     print("[OK] Pipeline loaded successfully!")
+
+    # Warmup: Pre-compile numba functions during startup
+    print("[INFO] Warming up numba JIT compilation...")
+    try:
+        import numpy as np
+        import librosa
+        # Create a dummy audio signal to trigger numba compilation
+        dummy_sr = 22050
+        dummy_duration = 0.5  # 0.5 seconds
+        dummy_signal = np.random.randn(int(dummy_sr * dummy_duration))
+        # This will trigger numba compilation now instead of during first request
+        _ = librosa.feature.mfcc(y=dummy_signal, sr=dummy_sr, n_mfcc=13, n_fft=2048, hop_length=512)
+        print("[OK] Numba warmup completed!")
+    except Exception as warmup_error:
+        print(f"[WARNING] Warmup failed but continuing: {warmup_error}")
+
 except Exception as e:
     print(f"[WARNING] Could not load pipeline. Error: {e}")
     print("Please train the model first by running: python train_model.py")
